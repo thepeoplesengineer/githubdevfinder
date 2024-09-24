@@ -1,8 +1,16 @@
 // server.js
-const express = require('express');
-const path = require('path');
-const app = express();
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
+// Create __filename and __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+
+
+import express from 'express';
+import path from 'path';
+const app = express();
 // Serve static files from the dist directory
 const port = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, 'dist')));
